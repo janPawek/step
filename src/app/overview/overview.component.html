@@ -1,0 +1,82 @@
+<!-- import /export from data.ts: Antwort NEIN -->
+<!-- design this file for output: CSS and bootstrap -->
+<div>
+    Starters:
+    <!-- change to starter dishes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <div *ngFor="let starter of starterDishes"> 
+        <!-- i don´t want to show it at Overview at starters can i delete the following row? -->
+        <p *ngIf="starter.SubCat">{{starter.SubCat}}</p>
+        <p>{{starter.Name}}</p>
+        <img src="assets/{{starter.image}}" alt="">
+        <p>{{starter.Brutto.toLocaleString("de-DE", {style: "currency", currency:"EUR"})}}</p>
+        <!-- ? true/false: Button 18+ for dishes/ beverage with alcohol ?-->
+        <p *ngIf="starter.Age">{{starter.Age}}</p>
+        <!-- ? integrate Button for Details or rating of this dish -->
+        <!-- ? Add-Button (with "+1 & cart-symbol) zu put it to cart +1 at navbar at red Badge(-Button), bg-color of dish-card get grey when it is in cart at overview -->
+        <button class="custom-button" (click)="addToCart(starter)">+1 <i class="fa-solid fa-cart-shopping notificationContainer cart"></i></button>
+
+    </div>
+    
+    Mains:
+    <div *ngFor="let main of mainDishes">
+        <p>{{main.Name}}</p>
+        <p *ngIf="main.SubCat">{{main.SubCat}}</p>
+        <p>{{main.image}}</p>
+        <p>{{main.Brutto}}</p>
+        <!-- ? true/false: Button 18+ for dishes/ beverage with alcohol ?-->
+        <p *ngIf="main.Age">{{main.Age}}</p>
+         <!-- ? integrate Button for Details or rating of this dish -->
+         <!-- ? Add-Button (with "+1 & cart-symbol) zu put it to cart +1 at navbar at red Alert-Button, bg-color of dish-card get grey when it is in cart at overview -->
+         <p>gfdfd</p>
+    </div>
+
+    Desserts:
+    <div *ngFor="let dessert of dessertDishes">
+        <p>{{dessert.Name}}</p>
+        <p *ngIf="dessert.SubCat">{{dessert.SubCat}}</p>
+        <p>{{dessert.image}}></p>
+        <p>{{dessert.Brutto}}></p>
+        <!-- ? true/false: Button 18+ for dishes/ beverage with alcohol ?-->
+        <p *ngIf="dessert.Age">{{dessert.Age}}</p>
+        <!-- ? integrate Button for Details or rating of this dish -->
+        <!-- ? Add-Button (with "+1 & cart-symbol) zu put it to cart +1 at navbar at red Alert-Button, bg-color of dish-card get grey when it is in cart at overview -->
+
+        <p>gfdfd</p>
+    </div>
+
+    Beverage:
+    <div *ngFor="let beverage of mainDishes">
+        <p>{{beverage.Name}}</p>
+        <p *ngIf="beverage.SubCat">{{beverage.SubCat}}</p>
+        <p>{{beverage.image}}</p>
+        <p>{{beverage.Brutto}}</p>
+        <!-- ? true/false: Button 18+ for dishes/ beverage with alcohol ?-->
+        <p *ngIf="beverage.Age">{{beverage.Age}}</p>
+         <!-- ? integrate Button for Details or rating of this dish -->
+        <!-- ? Add-Button (with "+1 & cart-symbol) zu put it to cart +1 at navbar at red Alert-Button, bg-color of dish-card get grey when it is in cart at overview -->
+        <p>gfdfd</p>
+    </div>
+
+</div>
+
+<!-- can i use it here at overview.component to add dish to cart? -->
+<!-- <div>
+    <h1>{{dish.name}}</h1>
+    <div class="row mx-auto" style="width: 75%;">
+      <div class="card p-3 mb-5">
+  
+        <div class="card-img-body">
+          <img class="card-img" data-bs-toggle="modal" data-bs-target="#exampleModal" src={{dish.image}}
+            alt="{{dish.name}}" title="Click to see the details">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{dish.name}}</h5>
+          <p class="card-text">{{ dish.description}}</p>
+          <p class="card-text"> Price: {{<dish class="Brutto"></dish> | currency: '€ '}}</p>
+          <p class="col-4 p-2 ms-3 btn btn-secondary btn-sm w-50 text-white" *ngIf="dish.available"
+            (click)="addToCart(dish)"><i class="bi bi-basket"> Add to basket</i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> -->

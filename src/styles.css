@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+.custom-button {
+    background-color: #343a40;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .custom-button:hover {
+    background-color: #23272b;
+  }
+  
+  /* .notificationContainer { */
+    /* Add any specific styles for the notification container here */
+  /* } */
+  
+  .cart {
+    /* Add any specific styles for the cart icon here */
+    padding-right: 1.2rem;
+    font-size: 1.2rem;
+  }
+  

@@ -1,0 +1,25 @@
+
+<div class="container">
+    <h1 class="text-center"><i>Cart</i></h1>
+    <hr>
+
+    <div *ngFor="let val of cart">
+        <img src="assets/{{val.image}}" alt="">
+        <p>{{val.Brutto}}</p>
+    </div>
+</div>
+<!-- <h3>Your Order</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }} </span>
+    <span>{{ item.Brutto }} €</span>
+</div>
+
+<p class="fw-bold">
+    Dishes: {{ subtotal }} € <br>
+    Service: {{ service }} € <br>
+    Total: {{ total }} € <br>
+    <span *ngIf="total > 40">
+        After 15% Discount you pay: {{ totalAfterDiscount }} €
+    </span>
+</p> -->
